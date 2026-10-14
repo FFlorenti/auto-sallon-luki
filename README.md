@@ -101,17 +101,28 @@ node --env-file=.env tools/demo-data/seed.mjs
 ```
 The script logs in with `ADMIN_EMAIL` / `ADMIN_PASSWORD` and creates the cars through the admin API. It refuses to run if the site already has cars (override with `--force`). Photo credits: [docs/demo-photo-credits.md](docs/demo-photo-credits.md). Demo data is for local use and screenshots only, never for the live dealership site.
 
+## Deployment
+
+The hosted demo runs on free plans: one Docker container on [Render](https://render.com) and PostgreSQL on [Neon](https://neon.com).
+
+- The root [Dockerfile](Dockerfile) builds the React app and the API into a single image. When the image contains the built website, the API serves it itself (static files, app-route fallback, link previews, security headers), so no separate Nginx container is needed.
+- [render.yaml](render.yaml) describes the service. Render reads it, asks for the three secrets (database URL, admin email, admin password) and generates the JWT signing key.
+- Render's free disk is wiped whenever the service sleeps, so the demo sets `Storage__Provider=Database` and keeps photos in PostgreSQL.
+- Deploys happen automatically after the CI checks pass on `main`.
+
+Free-plan limits: the service sleeps after 15 minutes without visitors, and the next visit takes about a minute while it starts again.
+
 ## Configuration
 
 All settings come from environment variables (`Section__Key`) or user secrets; nothing secret is committed.
 
 | Setting | Purpose |
 |---|---|
-| `ConnectionStrings__Default` | PostgreSQL connection |
+| `ConnectionStrings__Default` | PostgreSQL connection, as `Host=...;` or as a `postgresql://` URL |
 | `Jwt__SigningKey` | HMAC key for admin tokens (≥ 32 chars). The app refuses to start without it |
 | `AdminSeed__Email`, `AdminSeed__Password` | First admin, created once if no admin exists |
 | `Turnstile__SecretKey` | Cloudflare Turnstile server key |
-| `Storage__Provider` | `Local` or `Azure` (+ `Storage__AzureConnectionString`) |
+| `Storage__Provider` | `Local`, `Azure` (+ `Storage__AzureConnectionString`) or `Database` (photos kept in PostgreSQL) |
 | `Email__SmtpHost`, `Email__NotificationAddress`, … | Inquiry email notifications (logged only if no SMTP host) |
 | `RateLimits__InquiryPermitLimit`, … | Rate limits, tunable without a code change |
 | `Database__MigrateOnStartup` | Apply EF Core migrations at startup (single-instance deployments) |
@@ -124,7 +135,7 @@ All settings come from environment variables (`Section__Key`) or user secrets; n
 dotnet test        # needs Docker running (integration tests start PostgreSQL)
 ```
 - **Unit tests (50):** validators, domain status rules, image-type detection. A fake clock (`FakeTimeProvider`) keeps date rules deterministic.
-- **Integration tests (46):** the real API in memory (`WebApplicationFactory`) against a real PostgreSQL in a throwaway container (Testcontainers). They cover auth and roles, filters with paging, VIN privacy, sold and deleted cars, photo resizing and fake-image rejection, link-preview pages (including HTML-encoding), the admin account following configuration, inquiries with spam checks, dashboard counts and rate limiting.
+- **Integration tests (68):** the real API in memory (`WebApplicationFactory`) against a real PostgreSQL in a throwaway container (Testcontainers). They cover auth and roles, filters with paging, VIN privacy, sold and deleted cars, photo resizing and fake-image rejection, link-preview pages (including HTML-encoding), photos stored in the database, the API serving the website, the admin account following configuration, inquiries with spam checks, dashboard counts and rate limiting.
 
 CI (GitHub Actions) runs the backend tests, frontend lint and build, and both Docker image builds on every push and pull request.
 
@@ -146,6 +157,8 @@ CI (GitHub Actions) runs the backend tests, frontend lint and build, and both Do
 | **Resize on upload** (SkiaSharp) | A 6 MB phone photo becomes a ~250 KB JPEG plus a ~45 KB WebP thumbnail, so the list loads fast on mobile data. Re-encoding strips EXIF (GPS), fixes orientation and proves the file is a real image; dimensions are checked before decoding to block decompression bombs. SkiaSharp was chosen for its MIT license (ImageSharp 4 needs a paid key for Release builds) |
 | **Link previews by dynamic rendering** | Preview bots do not run JavaScript, so Nginx sends them (by User-Agent) to a small API page with Open Graph tags; people and search engines get the React app. All values are HTML-encoded |
 | **Native `<dialog>` for the photo viewer** | Focus trap, Escape and screen-reader semantics come from the browser instead of a library |
+| **Three storage back ends behind one interface** | `IFileStorage` has local disk (development), Azure Blob (production) and PostgreSQL (the free demo, where the host has no persistent disk). Adding the third needed no change to the business logic |
+| **One container for the demo** | On a free host every container sleeps and wakes separately. The API can serve the built website itself, which halves the cold start; Docker Compose with Nginx remains the multi-container setup |
 | **Store blob names, not URLs** | Switching storage account or adding a CDN needs no data migration |
 | **Background email queue** (`Channel` + `BackgroundService`) | Visitors get an instant response; an SMTP failure can never lose an inquiry, which is saved first |
 | **Turnstile verified on the server** | A browser-only check can be skipped by bots; fails closed if Cloudflare is unreachable |
