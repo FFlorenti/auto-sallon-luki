@@ -52,9 +52,18 @@ try
 
     await DbInitializer.InitializeAsync(app.Services, app.Configuration);
 
+    var hasWebsite = app.HasWebsite();
+
     app.UseForwardedHeaders();
     app.UseSerilogRequestLogging();
     app.UseExceptionHandler();
+
+    if (hasWebsite)
+    {
+        app.UseWebsite();
+    }
+
+    app.UseRouting();
 
     if (app.Environment.IsDevelopment() || app.Configuration.GetValue<bool>("Swagger:Enabled"))
     {
@@ -70,6 +79,12 @@ try
 
     app.MapControllers();
     app.MapHealthChecks("/health");
+    app.MapDatabaseUploads();
+
+    if (hasWebsite)
+    {
+        app.MapWebsiteFallback();
+    }
 
     app.Run();
 }

@@ -1,6 +1,7 @@
 using AutoLuki.Application.Common;
 using AutoLuki.Domain;
 using AutoLuki.Infrastructure.Identity;
+using AutoLuki.Infrastructure.Storage;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
     public DbSet<Car> Cars => Set<Car>();
     public DbSet<CarPhoto> CarPhotos => Set<CarPhoto>();
     public DbSet<Inquiry> Inquiries => Set<Inquiry>();
+    public DbSet<StoredFile> StoredFiles => Set<StoredFile>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

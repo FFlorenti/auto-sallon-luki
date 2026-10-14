@@ -71,8 +71,12 @@ public static class DependencyInjection
             case "Azure":
                 services.AddSingleton<IFileStorage, AzureBlobFileStorage>();
                 break;
+            case "Database":
+                services.AddScoped<DatabaseFileStorage>();
+                services.AddScoped<IFileStorage>(sp => sp.GetRequiredService<DatabaseFileStorage>());
+                break;
             default:
-                throw new InvalidOperationException($"Unknown Storage:Provider '{provider}'. Use 'Local' or 'Azure'.");
+                throw new InvalidOperationException($"Unknown Storage:Provider '{provider}'. Use 'Local', 'Azure' or 'Database'.");
         }
     }
 
@@ -86,7 +90,7 @@ public static class DependencyInjection
 
         services.AddScoped<TimestampInterceptor>();
         services.AddDbContext<AppDbContext>((sp, options) => options
-            .UseNpgsql(connectionString)
+            .UseNpgsql(ConnectionStrings.Normalize(connectionString))
             .AddInterceptors(sp.GetRequiredService<TimestampInterceptor>()));
 
         services.AddScoped<IAppDbContext>(sp => sp.GetRequiredService<AppDbContext>());

@@ -8,10 +8,13 @@ namespace AutoLuki.IntegrationTests.Infrastructure;
 [Collection(IntegrationCollection.Name)]
 public abstract class IntegrationTestBase : IAsyncLifetime
 {
-    protected IntegrationTestBase(PostgresFixture postgres)
+    protected IntegrationTestBase(PostgresFixture postgres, IDictionary<string, string?>? settings = null)
     {
-        Factory = postgres.GetFactory("autoluki_" + GetType().Name.ToLowerInvariant());
+        Postgres = postgres;
+        Factory = postgres.GetFactory("autoluki_" + GetType().Name.ToLowerInvariant(), settings);
     }
+
+    protected PostgresFixture Postgres { get; }
 
     protected ApiFactory Factory { get; }
     protected HttpClient Anonymous { get; private set; } = null!;
