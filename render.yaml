@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: auto-sallon-luki
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: ConnectionStrings__Default
+        sync: false
+      - key: AdminSeed__Email
+        sync: false
+      - key: AdminSeed__Password
+        sync: false
+      - key: Jwt__SigningKey
+        generateValue: true
+      - key: Database__MigrateOnStartup
+        value: "true"
+      - key: Storage__Provider
+        value: Database
+      - key: Swagger__Enabled
+        value: "true"
+      - key: Site__Name
+        value: Auto Sallon Luki
+      - key: Turnstile__SecretKey
+        value: 1x0000000000000000000000000000000AA
+      - key: VITE_TURNSTILE_SITE_KEY
+        value: 1x00000000000000000000AA
+      - key: VITE_DEMO_MODE
+        value: "true"
+      - key: VITE_DEALER_NAME
+        value: Auto Sallon Luki
+      - key: VITE_DEALER_PHONE
+        value: +383 44 000 000
+      - key: VITE_DEALER_WHATSAPP
+        value: "38344000000"
+      - key: VITE_DEALER_ADDRESS
+        value: Vushtrri, Kosovë
