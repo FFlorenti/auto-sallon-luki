@@ -1,0 +1,5 @@
+@Api = http://localhost:5228
+
+GET {{Api}}/health
+
+###
