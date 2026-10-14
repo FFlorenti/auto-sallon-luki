@@ -2,7 +2,7 @@
 
 A production-ready website for a small used-car dealership in Kosovo. Visitors browse cars and contact the dealer without an account; the owner manages cars, photos and inquiries from an admin panel.
 
-**Live:** _coming soon_ · **Stack:** ASP.NET Core 10 · EF Core · PostgreSQL · React + TypeScript · Docker
+**Live:** _coming soon_ · **Stack:** ASP.NET Core 10 · EF Core · PostgreSQL · React + TypeScript · Tailwind CSS · Docker
 
 <!-- Screenshots: add docs/screenshots/*.png here once real car photos are online. -->
 
