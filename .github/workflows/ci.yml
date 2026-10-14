@@ -67,3 +67,6 @@ jobs:
 
       - name: Build web image
         run: docker build -t autoluki-web:ci frontend
+
+      - name: Build single-container image (used by the hosted demo)
+        run: docker build -t autoluki:ci .

@@ -2,7 +2,11 @@
 
 A production-ready website for a small used-car dealership in Kosovo. Visitors browse cars and contact the dealer without an account; the owner manages cars, photos and inquiries from an admin panel.
 
-**Live:** _coming soon_ · **Stack:** ASP.NET Core 10 · EF Core · PostgreSQL · React + TypeScript · Tailwind CSS · Docker
+**Live demo:** https://auto-sallon-luki.onrender.com · **API docs:** https://auto-sallon-luki.onrender.com/swagger
+
+The demo runs on a free server that sleeps when idle, so the first visit can take about a minute to load.
+
+**Stack:** ASP.NET Core 10 · EF Core · PostgreSQL · React + TypeScript · Tailwind CSS · Docker
 
 > **Demo data:** the cars shown in the screenshots and on the hosted demo are invented examples, not real offers.
 
