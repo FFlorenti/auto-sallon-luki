@@ -69,6 +69,12 @@ export function Layout() {
         Skip to content
       </a>
 
+      {config.demoMode && (
+        <p className="bg-amber-300 px-4 py-1.5 text-center text-xs font-medium text-amber-950 sm:text-sm" role="note">
+          {t('demo.banner')}
+        </p>
+      )}
+
       <header className="sticky top-0 z-30 border-b border-white/10 bg-ink-950/95 backdrop-blur">
         <div className="container-page flex h-[72px] items-center justify-between gap-4">
           <Link to="/" aria-label={config.dealerName} className="shrink-0">

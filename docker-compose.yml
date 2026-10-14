@@ -33,6 +33,7 @@ services:
       AdminSeed__Password: ${ADMIN_PASSWORD:-}
       Turnstile__SecretKey: ${TURNSTILE_SECRET_KEY:?Set TURNSTILE_SECRET_KEY in .env}
       Site__Name: ${DEALER_NAME:-Auto Sallon Luki}
+      Swagger__Enabled: ${SWAGGER_ENABLED:-false}
       Storage__Provider: ${STORAGE_PROVIDER:-Local}
       Storage__AzureConnectionString: ${AZURE_STORAGE_CONNECTION_STRING:-}
       Email__SmtpHost: ${SMTP_HOST:-}
@@ -48,11 +49,12 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_DEALER_NAME: ${DEALER_NAME:-Auto Luki}
+        VITE_DEALER_NAME: ${DEALER_NAME:-Auto Sallon Luki}
         VITE_DEALER_PHONE: ${DEALER_PHONE:-}
         VITE_DEALER_WHATSAPP: ${DEALER_WHATSAPP:-}
         VITE_DEALER_ADDRESS: ${DEALER_ADDRESS:-}
         VITE_TURNSTILE_SITE_KEY: ${TURNSTILE_SITE_KEY:-}
+        VITE_DEMO_MODE: ${DEMO_MODE:-false}
     restart: unless-stopped
     depends_on:
       - api

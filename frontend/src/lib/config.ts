@@ -4,6 +4,7 @@ export const config = {
   dealerWhatsApp: import.meta.env.VITE_DEALER_WHATSAPP ?? '',
   dealerAddress: import.meta.env.VITE_DEALER_ADDRESS ?? '',
   turnstileSiteKey: import.meta.env.VITE_TURNSTILE_SITE_KEY ?? '',
+  demoMode: import.meta.env.VITE_DEMO_MODE === 'true',
 }
 
 export function phoneHref(phone: string) {

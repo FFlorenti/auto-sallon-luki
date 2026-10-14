@@ -237,5 +237,8 @@
         "Closed": "Closed"
       }
     }
+  },
+  "demo": {
+    "banner": "Demo website. The cars shown are examples, not real offers."
   }
 }
