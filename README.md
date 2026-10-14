@@ -1,10 +1,26 @@
-# Auto Luki: Car Dealership Website
+# Auto Sallon Luki: Car Dealership Website
 
 A production-ready website for a small used-car dealership in Kosovo. Visitors browse cars and contact the dealer without an account; the owner manages cars, photos and inquiries from an admin panel.
 
 **Live:** _coming soon_ · **Stack:** ASP.NET Core 10 · EF Core · PostgreSQL · React + TypeScript · Tailwind CSS · Docker
 
-<!-- Screenshots: add docs/screenshots/*.png here once real car photos are online. -->
+> **Demo data:** the cars shown in the screenshots and on the hosted demo are invented examples, not real offers.
+
+## Screenshots
+
+| Public site | Car page |
+|---|---|
+| ![Home page with search and filters](docs/screenshots/home.jpg) | ![Car page with gallery, specifications and inquiry form](docs/screenshots/car-detail.jpg) |
+| ![Car listing with filters](docs/screenshots/listing.jpg) | <img src="docs/screenshots/mobile-home.jpg" alt="Mobile home page in Albanian" width="260"> <img src="docs/screenshots/mobile-detail.jpg" alt="Mobile car page" width="260"> |
+
+| Admin: cars | Admin: add and edit a car, manage photos |
+|---|---|
+| ![Admin car list with status actions](docs/screenshots/admin-cars.jpg) | ![Admin car form with photo manager](docs/screenshots/admin-car-form.jpg) |
+| ![Admin inbox with customer inquiries](docs/screenshots/admin-inquiries.jpg) | ![Admin dashboard](docs/screenshots/admin-dashboard.jpg) |
+
+**API documentation (Swagger)**
+
+![Swagger UI listing the API endpoints](docs/screenshots/swagger.jpg)
 
 ## Features
 
@@ -99,6 +115,8 @@ All settings come from environment variables (`Section__Key`) or user secrets; n
 | `Email__SmtpHost`, `Email__NotificationAddress`, … | Inquiry email notifications (logged only if no SMTP host) |
 | `RateLimits__InquiryPermitLimit`, … | Rate limits, tunable without a code change |
 | `Database__MigrateOnStartup` | Apply EF Core migrations at startup (single-instance deployments) |
+| `Swagger__Enabled` | Serve the API documentation at `/swagger` outside development (on for the portfolio demo) |
+| `VITE_DEMO_MODE` (frontend build) | Shows a "demo website" banner and asks search engines not to index the site |
 
 ## Tests
 
@@ -106,7 +124,7 @@ All settings come from environment variables (`Section__Key`) or user secrets; n
 dotnet test        # needs Docker running (integration tests start PostgreSQL)
 ```
 - **Unit tests (50):** validators, domain status rules, image-type detection. A fake clock (`FakeTimeProvider`) keeps date rules deterministic.
-- **Integration tests (44):** the real API in memory (`WebApplicationFactory`) against a real PostgreSQL in a throwaway container (Testcontainers). They cover auth and roles, filters with paging, VIN privacy, sold and deleted cars, photo resizing and fake-image rejection, link-preview pages (including HTML-encoding), the admin account following configuration, inquiries with spam checks, dashboard counts and rate limiting.
+- **Integration tests (46):** the real API in memory (`WebApplicationFactory`) against a real PostgreSQL in a throwaway container (Testcontainers). They cover auth and roles, filters with paging, VIN privacy, sold and deleted cars, photo resizing and fake-image rejection, link-preview pages (including HTML-encoding), the admin account following configuration, inquiries with spam checks, dashboard counts and rate limiting.
 
 CI (GitHub Actions) runs the backend tests, frontend lint and build, and both Docker image builds on every push and pull request.
 
