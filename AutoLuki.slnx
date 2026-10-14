@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AutoLuki.Api/AutoLuki.Api.csproj" />
+    <Project Path="src/AutoLuki.Application/AutoLuki.Application.csproj" />
+    <Project Path="src/AutoLuki.Domain/AutoLuki.Domain.csproj" />
+    <Project Path="src/AutoLuki.Infrastructure/AutoLuki.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AutoLuki.IntegrationTests/AutoLuki.IntegrationTests.csproj" />
+    <Project Path="tests/AutoLuki.UnitTests/AutoLuki.UnitTests.csproj" />
+  </Folder>
+</Solution>
