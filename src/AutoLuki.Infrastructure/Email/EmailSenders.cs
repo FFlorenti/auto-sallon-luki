@@ -16,7 +16,7 @@ public class EmailOptions
     public string? Username { get; init; }
     public string? Password { get; init; }
     public string FromAddress { get; init; } = "no-reply@autoluki.local";
-    public string FromName { get; init; } = "Auto Luki";
+    public string FromName { get; init; } = "Auto Sallon Luki";
 
     public string? NotificationAddress { get; init; }
 

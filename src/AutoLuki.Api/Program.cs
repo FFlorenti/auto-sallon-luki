@@ -26,7 +26,15 @@ try
 
     builder.Services.AddControllers()
         .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-    builder.Services.AddOpenApi(options => options.AddDocumentTransformer<BearerSecuritySchemeTransformer>());
+    builder.Services.AddOpenApi(options =>
+    {
+        options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+        options.AddDocumentTransformer((document, _, _) =>
+        {
+            document.Info.Title = "Auto Sallon Luki API";
+            return Task.CompletedTask;
+        });
+    });
     builder.Services.AddProblemDetails();
     builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
     builder.Services.AddHealthChecks().AddDbContextCheck<AppDbContext>();
@@ -48,10 +56,10 @@ try
     app.UseSerilogRequestLogging();
     app.UseExceptionHandler();
 
-    if (app.Environment.IsDevelopment())
+    if (app.Environment.IsDevelopment() || app.Configuration.GetValue<bool>("Swagger:Enabled"))
     {
         app.MapOpenApi();
-        app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Auto Luki API"));
+        app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Auto Sallon Luki API"));
     }
 
     app.UseLocalUploads();
