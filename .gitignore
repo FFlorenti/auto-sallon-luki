@@ -1,0 +1,28 @@
+# Secrets
+.env
+appsettings.*.local.json
+
+# .NET
+bin/
+obj/
+*.user
+.vs/
+TestResults/
+
+# Node
+node_modules/
+dist/
+
+# Local uploads (dev photo storage)
+uploads/
+
+# IDE / OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+Thumbs.db
+.DS_Store
+
+# Demo photo downloads (tools/demo-data/seed.mjs)
+tools/demo-data/.cache/
