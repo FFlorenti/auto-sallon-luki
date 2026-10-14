@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-50: #fff1f1;
+  --color-brand-100: #ffe1e1;
+  --color-brand-500: #f0383d;
+  --color-brand-600: #e1151b;
+  --color-brand-700: #b90f14;
+  --color-ink-900: #18181b;
+  --color-ink-950: #0c0c0e;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Saira Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.06);
+  --shadow-card-hover: 0 2px 4px rgb(0 0 0 / 0.06), 0 12px 32px rgb(0 0 0 / 0.12);
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 font-sans text-zinc-900 antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition
+    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600
+    disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+@utility card {
+  @apply rounded-2xl border border-zinc-200/80 bg-white shadow-card;
+}
+
+@layer components {
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  }
+  .btn-dark {
+    @apply btn bg-ink-950 text-white hover:bg-ink-900;
+  }
+  .btn-secondary {
+    @apply btn border border-zinc-300 bg-white text-zinc-800 hover:border-zinc-400 hover:bg-zinc-50;
+  }
+  .btn-danger {
+    @apply btn border border-red-300 bg-white text-red-700 hover:border-red-500 hover:bg-red-50;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-sm hover:bg-[#1da851];
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-zinc-700;
+  }
+  .input {
+    @apply block w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm shadow-xs
+      placeholder:text-zinc-400 focus:border-brand-600 focus:ring-3 focus:ring-brand-100 focus:outline-none
+      aria-invalid:border-red-500;
+  }
+  .field-error {
+    @apply mt-1 text-xs text-red-600;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}

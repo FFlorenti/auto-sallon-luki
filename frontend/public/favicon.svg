@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0c0c0e"/>
+  <!-- Car outline from the sign -->
+  <path d="M5 29 C 13 27, 18 25, 23 19 C 27 14, 32 12, 38 12 C 46 12, 50 17, 54 22 C 56 24, 58 25, 60 25" fill="none" stroke="#e1151b" stroke-width="3.6" stroke-linecap="round"/>
+  <!-- "LUKI" drawn as shapes (no font needed), as wide and bold as the icon allows -->
+  <g fill="#e1151b">
+    <path d="M5 35 h5 v14 h8 v5 h-13 z"/>
+    <path d="M20.5 35 h5 v14 h4.5 v-14 h5 v19 h-14.5 z"/>
+    <path d="M37.5 35 h5 v7 l5.2 -7 h6 l-6.4 8.6 l7 10.4 h-6.1 l-4.3 -6.6 l-1.4 1.9 v4.7 h-5 z"/>
+    <path d="M54.5 35 h4.5 v19 h-4.5 z"/>
+  </g>
+</svg>

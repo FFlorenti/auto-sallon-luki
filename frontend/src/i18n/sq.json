@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "cars": "Veturat",
+    "favorites": "Të preferuarat",
+    "contact": "Kontakti",
+    "menu": "Menyja"
+  },
+  "common": {
+    "loading": "Duke u ngarkuar…",
+    "error": "Diçka shkoi keq. Ju lutem provoni përsëri.",
+    "retry": "Provo përsëri",
+    "save": "Ruaj",
+    "saving": "Duke ruajtur…",
+    "cancel": "Anulo",
+    "delete": "Fshij",
+    "edit": "Ndrysho",
+    "back": "Kthehu",
+    "add": "Shto",
+    "all": "Të gjitha",
+    "any": "Çfarëdo",
+    "yes": "Po",
+    "no": "Jo",
+    "optional": "opsionale"
+  },
+  "car": {
+    "price": "Çmimi",
+    "year": "Viti",
+    "mileage": "Kilometrazha",
+    "fuel": "Karburanti",
+    "transmission": "Transmisioni",
+    "body": "Karroceria",
+    "engine": "Motori",
+    "power": "Fuqia",
+    "color": "Ngjyra",
+    "doors": "Dyer",
+    "customs": "E doganuar",
+    "description": "Përshkrimi",
+    "specs": "Specifikimet",
+    "brand": "Marka",
+    "model": "Modeli",
+    "status": "Statusi",
+    "noPhoto": "Ende pa foto"
+  },
+  "fuel": {
+    "Petrol": "Benzinë",
+    "Diesel": "Naftë",
+    "Hybrid": "Hibrid",
+    "Electric": "Elektrike",
+    "Lpg": "Benzinë/Gaz"
+  },
+  "transmission": {
+    "Manual": "Manual",
+    "Automatic": "Automatik"
+  },
+  "body": {
+    "Sedan": "Sedan",
+    "Hatchback": "Hatchback",
+    "Wagon": "Karavan",
+    "Suv": "SUV / Xhip",
+    "Coupe": "Kupe",
+    "Convertible": "Kabriolet",
+    "Van": "Furgon",
+    "Pickup": "Pickup"
+  },
+  "status": {
+    "Available": "Në shitje",
+    "Sold": "E shitur"
+  },
+  "sort": {
+    "Newest": "Më të rejat",
+    "PriceAsc": "Çmimi: nga më i ulëti",
+    "PriceDesc": "Çmimi: nga më i larti",
+    "YearDesc": "Viti: më i ri",
+    "MileageAsc": "Kilometrat: më pak"
+  },
+  "filters": {
+    "title": "Filtrat",
+    "show": "Filtrat",
+    "search": "Kërko markën ose modelin…",
+    "anyBrand": "Të gjitha markat",
+    "anyModel": "Të gjithë modelet",
+    "yearFrom": "Viti nga",
+    "yearTo": "Viti deri",
+    "priceFrom": "Çmimi nga (€)",
+    "priceTo": "Çmimi deri (€)",
+    "mileageMax": "Kilometrazha maks. (km)",
+    "sort": "Rendit sipas",
+    "reset": "Pastro filtrat",
+    "close": "Shfaq rezultatet",
+    "removeFilter": "Hiq filtrin"
+  },
+  "listing": {
+    "heroTitle": "Gjeni veturën tuaj të radhës",
+    "heroText": "Vetura të përdorura cilësore në Kosovë. Shfletoni, telefononi ose na shkruani në WhatsApp. Pa llogari.",
+    "results_one": "{{count}} veturë",
+    "results_other": "{{count}} vetura",
+    "empty": "Asnjë veturë nuk përputhet me filtrat tuaj.",
+    "prev": "Para",
+    "next": "Tjetra",
+    "pageOf": "Faqja {{page}} nga {{total}}",
+    "searchButton": "Kërko",
+    "trustStock_one": "{{count}} veturë në shitje",
+    "trustStock_other": "{{count}} vetura në shitje",
+    "trustContact": "Telefon ose WhatsApp",
+    "trustTestDrive": "Provë vozitjeje me kërkesë"
+  },
+  "detail": {
+    "call": "Telefono",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Përshëndetje, jam i interesuar për {{car}} ({{url}})",
+    "soldNotice": "Kjo veturë është shitur. Shikoni veturat tona të tjera.",
+    "backToList": "Të gjitha veturat",
+    "photoOf": "Foto {{n}} nga {{total}}",
+    "prevPhoto": "Foto paraprake",
+    "nextPhoto": "Foto tjetër",
+    "notFound": "Kjo veturë nuk ekziston ose është hequr.",
+    "openFullscreen": "Shiko foton në ekran të plotë",
+    "closeFullscreen": "Mbyll ekranin e plotë"
+  },
+  "inquiry": {
+    "title": "Pyetni për këtë veturë",
+    "generalTitle": "Na dërgoni një mesazh",
+    "typeGeneral": "Pyetje",
+    "typeTestDrive": "Provë vozitjeje",
+    "name": "Emri",
+    "phone": "Telefoni",
+    "email": "Email",
+    "message": "Mesazhi",
+    "preferredDate": "Data e preferuar",
+    "submit": "Dërgo",
+    "sending": "Duke dërguar…",
+    "success": "Faleminderit! Do t'ju kontaktojmë së shpejti.",
+    "tooMany": "Shumë mesazhe. Ju lutem prisni pak minuta ose na telefononi.",
+    "captchaRequired": "Ju lutem prisni që të përfundojë kontrolli kundër spam-it.",
+    "defaultMessage": "Përshëndetje, jam i interesuar për këtë veturë. A është ende në shitje?",
+    "errors": {
+      "name": "Ju lutem shkruani emrin.",
+      "phone": "Ju lutem shkruani një numër telefoni të vlefshëm.",
+      "email": "Ju lutem shkruani një email të vlefshëm.",
+      "message": "Ju lutem shkruani një mesazh."
+    }
+  },
+  "favorites": {
+    "title": "Të preferuarat",
+    "empty": "Nuk keni ende vetura të preferuara. Prekni zemrën te një veturë për ta ruajtur këtu.",
+    "add": "Shto te të preferuarat",
+    "remove": "Hiq nga të preferuarat",
+    "unavailable": "Disa vetura të ruajtura nuk janë më në dispozicion."
+  },
+  "contact": {
+    "title": "Kontakti",
+    "intro": "Na vizitoni, telefononi ose na dërgoni një mesazh. Zakonisht përgjigjemi të njëjtën ditë.",
+    "address": "Adresa",
+    "phone": "Telefoni"
+  },
+  "notFound": {
+    "title": "Faqja nuk u gjet",
+    "home": "Shko te lista e veturave"
+  },
+  "footer": {
+    "rights": "Të gjitha të drejtat e rezervuara.",
+    "explore": "Shfleto",
+    "contact": "Kontakti"
+  },
+  "admin": {
+    "title": "Administrimi",
+    "login": {
+      "title": "Hyrja e administratorit",
+      "email": "Email",
+      "password": "Fjalëkalimi",
+      "submit": "Hyr",
+      "invalid": "Email ose fjalëkalim i pasaktë.",
+      "tooMany": "Shumë tentime. Ju lutem prisni pak minuta."
+    },
+    "nav": {
+      "dashboard": "Paneli",
+      "cars": "Veturat",
+      "inquiries": "Kërkesat",
+      "logout": "Dil",
+      "website": "Shiko faqen"
+    },
+    "dashboard": {
+      "inStock": "Vetura në shitje",
+      "soldTotal": "Vetura të shitura (gjithsej)",
+      "soldMonth": "Të shitura këtë muaj",
+      "inquiriesNew": "Kërkesa të reja",
+      "inquiriesMonth": "Kërkesa këtë muaj",
+      "inquiriesTotal": "Kërkesa (gjithsej)"
+    },
+    "cars": {
+      "add": "Shto veturë",
+      "car": "Vetura",
+      "actions": "Veprimet",
+      "markSold": "Shëno si të shitur",
+      "markAvailable": "Kthe në shitje",
+      "confirmDelete": "Ta fshij këtë veturë? Do të zhduket nga faqja.",
+      "empty": "Ende nuk ka vetura."
+    },
+    "form": {
+      "newTitle": "Shto veturë",
+      "editTitle": "Ndrysho veturën",
+      "saved": "U ruajt.",
+      "created": "Vetura u krijua. Tani shtoni fotot.",
+      "vin": "VIN (privat, nuk shfaqet në faqe)",
+      "descriptionSq": "Përshkrimi (shqip)",
+      "descriptionEn": "Përshkrimi (anglisht)",
+      "selectBrand": "Zgjidh markën",
+      "selectModel": "Zgjidh modelin",
+      "newBrand": "Markë e re",
+      "newModel": "Model i ri",
+      "required": "E detyrueshme",
+      "invalid": "Vlerë e pavlefshme"
+    },
+    "photos": {
+      "title": "Fotot",
+      "upload": "Ngarko foto",
+      "uploading": "Duke ngarkuar…",
+      "hint": "JPEG, PNG ose WebP, deri në 10 MB secila. Foto e parë është kopertina.",
+      "saveFirst": "Ruani veturën së pari, pastaj shtoni fotot.",
+      "moveLeft": "Lëviz majtas",
+      "moveRight": "Lëviz djathtas",
+      "cover": "Kopertina",
+      "confirmDelete": "Ta fshij këtë foto?"
+    },
+    "inquiries": {
+      "empty": "Nuk ka kërkesa.",
+      "general": "Kërkesë e përgjithshme",
+      "markContacted": "Shëno si të kontaktuar",
+      "markClosed": "Mbyll",
+      "reopen": "Rihap",
+      "confirmDelete": "Ta fshij këtë kërkesë?",
+      "received": "Pranuar",
+      "preferredDate": "Data e preferuar",
+      "status": {
+        "New": "E re",
+        "Contacted": "E kontaktuar",
+        "Closed": "E mbyllur"
+      }
+    }
+  }
+}

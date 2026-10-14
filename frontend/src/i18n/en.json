@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "cars": "Cars",
+    "favorites": "Favorites",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong. Please try again.",
+    "retry": "Try again",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "add": "Add",
+    "all": "All",
+    "any": "Any",
+    "yes": "Yes",
+    "no": "No",
+    "optional": "optional"
+  },
+  "car": {
+    "price": "Price",
+    "year": "Year",
+    "mileage": "Mileage",
+    "fuel": "Fuel",
+    "transmission": "Transmission",
+    "body": "Body type",
+    "engine": "Engine",
+    "power": "Power",
+    "color": "Color",
+    "doors": "Doors",
+    "customs": "Customs cleared",
+    "description": "Description",
+    "specs": "Specifications",
+    "brand": "Brand",
+    "model": "Model",
+    "status": "Status",
+    "noPhoto": "No photo yet"
+  },
+  "fuel": {
+    "Petrol": "Petrol",
+    "Diesel": "Diesel",
+    "Hybrid": "Hybrid",
+    "Electric": "Electric",
+    "Lpg": "Petrol/LPG"
+  },
+  "transmission": {
+    "Manual": "Manual",
+    "Automatic": "Automatic"
+  },
+  "body": {
+    "Sedan": "Sedan",
+    "Hatchback": "Hatchback",
+    "Wagon": "Estate",
+    "Suv": "SUV",
+    "Coupe": "Coupe",
+    "Convertible": "Convertible",
+    "Van": "Van",
+    "Pickup": "Pickup"
+  },
+  "status": {
+    "Available": "Available",
+    "Sold": "Sold"
+  },
+  "sort": {
+    "Newest": "Newest first",
+    "PriceAsc": "Price: low to high",
+    "PriceDesc": "Price: high to low",
+    "YearDesc": "Year: newest",
+    "MileageAsc": "Mileage: lowest"
+  },
+  "filters": {
+    "title": "Filters",
+    "show": "Filters",
+    "search": "Search brand or model…",
+    "anyBrand": "All brands",
+    "anyModel": "All models",
+    "yearFrom": "Year from",
+    "yearTo": "Year to",
+    "priceFrom": "Price from (€)",
+    "priceTo": "Price to (€)",
+    "mileageMax": "Max mileage (km)",
+    "sort": "Sort by",
+    "reset": "Clear filters",
+    "close": "Show results",
+    "removeFilter": "Remove filter"
+  },
+  "listing": {
+    "heroTitle": "Find your next car",
+    "heroText": "Quality used cars in Kosovo. Browse, call or message us on WhatsApp. No account needed.",
+    "results_one": "{{count}} car",
+    "results_other": "{{count}} cars",
+    "empty": "No cars match your filters.",
+    "prev": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{page}} of {{total}}",
+    "searchButton": "Search",
+    "trustStock_one": "{{count}} car for sale",
+    "trustStock_other": "{{count}} cars for sale",
+    "trustContact": "Call or WhatsApp",
+    "trustTestDrive": "Test drive on request"
+  },
+  "detail": {
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hello, I am interested in the {{car}} ({{url}})",
+    "soldNotice": "This car has been sold. Have a look at our other cars.",
+    "backToList": "All cars",
+    "photoOf": "Photo {{n}} of {{total}}",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "notFound": "This car does not exist or was removed.",
+    "openFullscreen": "View photo fullscreen",
+    "closeFullscreen": "Close fullscreen"
+  },
+  "inquiry": {
+    "title": "Ask about this car",
+    "generalTitle": "Send us a message",
+    "typeGeneral": "Question",
+    "typeTestDrive": "Test drive",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "message": "Message",
+    "preferredDate": "Preferred date",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Thank you! We will contact you soon.",
+    "tooMany": "Too many messages. Please wait a few minutes or call us.",
+    "captchaRequired": "Please wait for the spam check to finish.",
+    "defaultMessage": "Hello, I am interested in this car. Is it still available?",
+    "errors": {
+      "name": "Please enter your name.",
+      "phone": "Please enter a valid phone number.",
+      "email": "Please enter a valid email address.",
+      "message": "Please write a message."
+    }
+  },
+  "favorites": {
+    "title": "Favorites",
+    "empty": "You have no favorites yet. Tap the heart on a car to save it here.",
+    "add": "Add to favorites",
+    "remove": "Remove from favorites",
+    "unavailable": "Some saved cars are no longer available."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Visit us, call, or send a message. We usually reply the same day.",
+    "address": "Address",
+    "phone": "Phone"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "home": "Go to the car list"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "explore": "Explore",
+    "contact": "Contact"
+  },
+  "admin": {
+    "title": "Admin",
+    "login": {
+      "title": "Admin login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "invalid": "Invalid email or password.",
+      "tooMany": "Too many attempts. Please wait a few minutes."
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "cars": "Cars",
+      "inquiries": "Inquiries",
+      "logout": "Log out",
+      "website": "View website"
+    },
+    "dashboard": {
+      "inStock": "Cars in stock",
+      "soldTotal": "Cars sold (total)",
+      "soldMonth": "Sold this month",
+      "inquiriesNew": "New inquiries",
+      "inquiriesMonth": "Inquiries this month",
+      "inquiriesTotal": "Inquiries (total)"
+    },
+    "cars": {
+      "add": "Add car",
+      "car": "Car",
+      "actions": "Actions",
+      "markSold": "Mark sold",
+      "markAvailable": "Mark available",
+      "confirmDelete": "Delete this car? It will disappear from the website.",
+      "empty": "No cars yet."
+    },
+    "form": {
+      "newTitle": "Add car",
+      "editTitle": "Edit car",
+      "saved": "Saved.",
+      "created": "Car created. Now add photos.",
+      "vin": "VIN (private, not shown on the website)",
+      "descriptionSq": "Description (Albanian)",
+      "descriptionEn": "Description (English)",
+      "selectBrand": "Select brand",
+      "selectModel": "Select model",
+      "newBrand": "New brand",
+      "newModel": "New model",
+      "required": "Required",
+      "invalid": "Invalid value"
+    },
+    "photos": {
+      "title": "Photos",
+      "upload": "Upload photos",
+      "uploading": "Uploading…",
+      "hint": "JPEG, PNG or WebP, up to 10 MB each. The first photo is the cover.",
+      "saveFirst": "Save the car first, then add photos.",
+      "moveLeft": "Move left",
+      "moveRight": "Move right",
+      "cover": "Cover",
+      "confirmDelete": "Delete this photo?"
+    },
+    "inquiries": {
+      "empty": "No inquiries.",
+      "general": "General inquiry",
+      "markContacted": "Mark contacted",
+      "markClosed": "Close",
+      "reopen": "Reopen",
+      "confirmDelete": "Delete this inquiry?",
+      "received": "Received",
+      "preferredDate": "Preferred date",
+      "status": {
+        "New": "New",
+        "Contacted": "Contacted",
+        "Closed": "Closed"
+      }
+    }
+  }
+}
